@@ -1,0 +1,15 @@
+{
+  "name": "schemegenie",
+  "version": "1.0.0",
+  "description": "Clean, scalable MERN-stack government schemes platform",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm install --prefix backend && npm install --prefix frontend",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm start --prefix frontend\"",
+    "start": "npm run dev"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -1,0 +1,226 @@
+/* Profile Page Container */
+.profile-page-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #1e1e1e;
+    /* Dark background */
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    /* Darker shadow */
+    font-family: 'Poppins', sans-serif;
+    color: #e0e0e0;
+    /* Light text */
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-header h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    /* White text */
+    margin-bottom: 10px;
+}
+
+.profile-header p {
+    color: #a0a0a0;
+    /* Light grey text */
+    font-size: 1rem;
+}
+
+/* Form Grid */
+.profile-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #cccccc;
+    /* Light label */
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 16px;
+    border: 1px solid #444;
+    /* Dark border */
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #2d2d2d;
+    /* Dark input background */
+    color: #ffffff;
+    /* White input text */
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0059ff;
+    background: #333;
+    /* Slightly lighter on focus */
+    box-shadow: 0 0 0 3px rgba(0, 89, 255, 0.2);
+    outline: none;
+}
+
+.form-group input:disabled {
+    background: #383838;
+    color: #888;
+    cursor: not-allowed;
+    border-color: #444;
+}
+
+/* Checkbox Style */
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #0059ff;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    cursor: pointer;
+}
+
+/* Action Buttons */
+.form-actions {
+    grid-column: span 2;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    /* Dark separator */
+}
+
+.btn-save {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #0059ff, #003fd1);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 89, 255, 0.4);
+}
+
+.btn-save:disabled {
+    background: #555;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    color: #aaa;
+}
+
+/* Status Messages */
+.status-message {
+    grid-column: span 2;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.status-message.success {
+    background: rgba(21, 87, 36, 0.2);
+    /* Dark green bg */
+    color: #d4edda;
+    /* Light green text */
+    border: 1px solid #1e7e34;
+}
+
+.status-message.error {
+    background: rgba(114, 28, 36, 0.2);
+    /* Dark red bg */
+    color: #f8d7da;
+    /* Light red text */
+    border: 1px solid #dc3545;
+}
+
+/* Loading State */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    color: #fff;
+}
+
+.loader {
+    border: 4px solid #333;
+    border-top: 4px solid #0059ff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-page-container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .profile-form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+
+    .form-actions {
+        grid-column: span 1;
+        flex-direction: column;
+    }
+
+    .btn-save {
+        width: 100%;
+        justify-content: center;
+    }
+}
